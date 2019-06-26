@@ -1,26 +1,26 @@
 @extends('layouts.app')
 @section('content')
-<div class="main-panel ">
+<div class=" content-area">
+  <div class="page-header">
+    <h4 class="page-title">Edit Ticket</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" > Ticket</li>
+      <li class="breadcrumb-item"><a href="{{ route('ticket.index')}}">Custom Ticket</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Edit ticket</li>
+    </ol>
+  </div>
     <div class="main-content">
           <div class="content-wrapper">
-        <div class="card">
+        <div class="card p-5" >
             <div class="card-header">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="card-title" id="basic-layout-tooltip">Edit Ticket</h4>
-                        <p class="mb-0">You can Edit a current ticket here.
-                        <code>Ticket Price</code>,  <code>Sales date</code>
-                        ( Ticket Information ) </p>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <a href="{{ route('ticket.index') }}" class="btn btn-success">View all tickets</a>
-                    </div>
-                </div>
+             
+                  
+           <h5 class="card-title"> You can edit your custom ticket here </h5>             
             
 
             </div>
             <div class="card-content">
-            <div class="px-3">
+            <div class="p-5">
 
                 <form class="form" method="post" action="{{ route('ticket.update', $data->id) }}" enctype="multipart/form-data">
                 @csrf
@@ -68,11 +68,8 @@
                     <div class="row">
                         <div class="col-md-2">
                             <img src="{{ asset('images') }}/{{ $data->image }}" alt="element 04" width="200"   class="float-left mt-3">
-
                         </div>
                         <div class="col-md-5">
-                            
-                        
                             <div class="form-group">
                             <label class="text-center">Select Ticket Image</label>
                                 <div class=" custom-file">
@@ -82,11 +79,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <br>
-                            <button type="submit"  class="btn-lg btn btn-raised btn-primary">
+                        <div class="col-md-1">
+                            <br><br>
+                            <button type="submit"  class="btn btn-cyan">
                             <i class="fa fa-check-square-o"></i> Save
                             </button>
+                        </div>
+                        <div class="col-md-1">
+                        <br><br>
+                            <a href="{{ route('ticket.index') }}" class=" btn btn-purple"><i class="fa fa-repeat"></i> View all tickets</a>
+
                         </div>
                     </div>
                     <br>

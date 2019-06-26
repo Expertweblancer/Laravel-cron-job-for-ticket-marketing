@@ -1,16 +1,22 @@
 @extends('layouts.app')
 @section('content')
-<div class="main-panel ">
+<div class=" content-area">
+  <div class="page-header">
+    <h4 class="page-title">Create Ticket</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" > Ticket</li>
+      <li class="breadcrumb-item"><a href="{{ route('ticket.index')}}">Custom Ticket</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Create ticket</li>
+    </ol>
+  </div>
     <div class="main-content">
           <div class="content-wrapper">
-        <div class="card">
+        <div class="card p-5">
             <div class="card-header">
-            <h4 class="card-title" id="basic-layout-tooltip">New Ticket</h4>
-            <p class="mb-0">You can add a new ticket here.
-                 <code>Ticket Price</code>,  <code>Sales date</code>
-                ( Ticket Information ) </p>
+                <h4 class="card-title" id="basic-layout-tooltip">You can add new ticket for you.</h4>
+                 
             </div>
-            <div class="card-content">
+            <div class="card-content p-5">
             <div class="px-3">
 
                 <form class="form" method="post" action="{{ route('ticket.store') }}" enctype="multipart/form-data">
@@ -68,11 +74,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-1">
                             <br>
-                            <button type="submit" class="btn-lg btn btn-raised btn-primary">
+                            <button type="submit" class=" btn btn-raised btn-primary">
                             <i class="fa fa-check-square-o"></i> Save
                             </button>
+                        </div>
+                        <div class="col-md-1">
+                            <br>
+                            <a href="{{ route('ticket.index') }}" class=" btn btn-purple"><i class="fa fa-repeat"></i> Back</a>
+
                         </div>
                     </div>
                     <br>

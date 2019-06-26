@@ -1,354 +1,402 @@
 @extends('layouts.app')
 
 @section('content')
- 
- 
-        <!-- Sidebar Header Ends-->
-        <!-- / main menu header-->
-        <!-- main menu content-->
-       
-      <!-- / main menu-->
-
-
-      <!-- Navbar (Header) Starts-->
-      
-      <!-- Navbar (Header) Ends-->
-
-      <div class="main-panel">
-        <!-- BEGIN : Main Content-->
-        <div class="main-content">
-          <div class="content-wrapper">
-          <h2>Hi <strong> {{Auth::user()->name}}</strong></h2>
-            
-          <!--Statistics cards Starts-->
-<div class="row">
-  
-  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-    
-    <div class="card gradient-blackberry">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">{{$total_count}}</h3>
-              <span>Total Ticket</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-pie-chart font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div id="Widget-line-chart" class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-    <div class="card gradient-ibiza-sunset">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">$ {{ $total_cost}}</h3>
-              <span>Total Cost</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-bulb font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div id="Widget-line-chart1" class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
-        </div>
-
-      </div>
-    </div>
+<div class=" content-area">
+  <div class="page-header">
+    <h4 class="page-title">Dashboard</h4>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Dashboard 1</li>
+    </ol>
   </div>
 
-  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-    <div class="card gradient-green-tea">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">{{$today_count}}</h3>
-              <span>Today Ticket</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
+  <div class="row row-cards">
+    <div class="col-sm-12 col-lg-6 col-xl-3 col-md-6">
+      <div class="card card-img-holder text-default bg-color">
+        <div class="row">
+          <div class="col-4">
+            <div class="circle-icon bg-primary text-center align-self-center shadow-primary"><img src="assets\images\circle.svg" class="card-img-absolute"><i class="lnr lnr-user fs-30  text-white mt-4"></i></div>
+          </div>
+          <div class="col-8">
+            <div class="card-body p-4">
+              <h1 class="mb-3">17,533</h1>
+              <h5 class="font-weight-normal mb-0">Followers</h5>
             </div>
           </div>
         </div>
-        <div id="Widget-line-chart2" class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
         </div>
-      </div>
     </div>
-  </div>
-  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
-    <div class="card gradient-pomegranate">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">$ {{$today_cost}}</h3>
-              <span>Today Cost</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-wallet font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div id="Widget-line-chart3" class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!--Statistics cards Ends-->
-<div class="row match-height">
-  <div class="col-xl-8 col-lg-12 col-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title mb-0">Visit & Sales Statistics</h4>
-      </div>
-      <div class="card-content">
-        <div class="card-body">
-          <div class="chart-info mb-2">
-            <span class="text-uppercase mr-3"><i class="fa fa-circle primary font-small-2 mr-1"></i> Sales</span>
-            <span class="text-uppercase"><i class="fa fa-circle deep-purple font-small-2 mr-1"></i> Visits</span>
+    <div class="col-sm-12 col-lg-6 col-xl-3 col-md-6">
+      <div class="card card-img-holder text-default">
+        <div class="row">
+          <div class="col-4">
+            <div class="card-img-absolute circle-icon bg-secondary align-items-center text-center shadow-secondary"><img src="assets\images\circle.svg" class="card-img-absolute"><i class="lnr lnr-heart fs-30 text-white mt-4"></i></div>
           </div>
-          <div id="line-area2" class="height-400 lineAreaDashboard">
+          <div class="col-8">
+            <div class="card-body p-4">
+              <h1 class="mb-3">10,257</h1>
+              <h5 class="font-weight-normal mb-0">Likes</h5>
+            </div>
           </div>
         </div>
-      </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6 col-xl-3 col-md-6">
+      <div class="card card-img-holder text-default">
+        <div class="row">
+          <div class="col-4">
+            <div class="card-img-absolute  circle-icon bg-info align-items-center text-center shadow-info"><img src="assets\images\circle.svg" class="card-img-absolute"><i class="lnr lnr-bubble fs-30 text-white mt-4"></i></div>
+          </div>
+          <div class="col-8">
+            <div class="card-body p-4">
+              <h1 class="mb-3">87</h1>
+              <h5 class="font-weight-normal mb-0">Comments</h5>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6 col-xl-3 col-md-6">
+      <div class="card card-img-holder text-default">
+        <div class="row">
+          <div class="col-4">
+            <div class="card-img-absolute circle-icon bg-success align-items-center text-center shadow-success"><img src="assets\images\circle.svg" class="card-img-absolute"><i class=" lnr lnr-envelope fs-30 text-white mt-4 "></i></div>
+          </div>
+          <div class="col-8">
+            <div class="card-body p-4">
+              <h1 class="mb-3">485</h1>
+              <h5 class="font-weight-normal mb-0">Posts</h5>
+            </div>
+          </div>
+        </div>
+        </div>
     </div>
   </div>
-  <div class="col-xl-4 col-lg-12 col-12">
-    <div class="card gradient-blackberry">
-      <div class="card-content">
-        <div class="card-body">
-          <h4 class="card-title white">Statistics</h4>
-          <div class="p-2 text-center">
-            <a class="white font-medium-1">Month</a>
-            <a class="btn btn-raised btn-round bg-white mx-3 px-3">Week</a>
-            <a class="white font-medium-1">Day</a>
-          </div>
-          <div class="my-3 text-center white">
-            <a class="font-large-2 d-block mb-1">$ 78.89 <span class="ft-arrow-up font-large-2"></span></a>
-            <span class="font-medium-1">Week2 +15.44</span>
-          </div>
-        </div>
-        <div id="lineChart" class="height-250 lineChart lineChartShadow">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="row match-height">
-  <div class="col-xl-4 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Statistics</h4>
-      </div>
-      <div class="card-content">
-
-        <p class="font-medium-2 text-muted text-center">Hobbies</p>
-        <div id="bar-chart" class="height-250 BarChartShadow BarChart">
+  <div class="row ">
+    <div class="col-lg-12 col-xl-4 col-sm-12">
+      <div class="card ">
+        <div class="card-header">
+          <div class="card-title">All Tasks</div>
         </div>
-
-        <div class="card-body">
-          <div class="row">
-            <div class="col text-center">
-              <span class="gradient-pomegranate d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-              <span class="font-large-1 d-block mb-2">48</span>
-              <span>Sport</span>
-            </div>
-            <div class="col text-center">
-              <span class="gradient-green-tea d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-              <span class="font-large-1 d-block mb-2">9</span>
-              <span>Music</span>
-            </div>
-            <div class="col text-center">
-              <span class="gradient-blackberry d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-              <span class="font-large-1 d-block mb-2">26</span>
-              <span>Travel</span>
-            </div>
-            <div class="col text-center">
-              <span class="gradient-ibiza-sunset d-block rounded-circle mx-auto mb-2" style="width:10px; height:10px;"></span>
-              <span class="font-large-1 d-block mb-2">17</span>
-              <span>News</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title mb-0">User List</h4>
-      </div>
-      <div class="card-content">
-        <div class="card-body">
-          <div class="media mb-1">
-            <a>
-              <img alt="96x96" class="media-object d-flex mr-3 bg-primary height-50 rounded-circle" src="app-assets/img/portrait/small/avatar-s-12.png">
-            </a>
-            <div class="media-body">
-              <h4 class="font-medium-1 mt-1 mb-0">Jessica Rice</h4>
-              <p class="text-muted font-small-3">UX Designer</p>
-            </div>
-            <div class="mt-1">
-              <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                <input type="checkbox" class="custom-control-input" checked id="customcheckbox1">
-                <label class="custom-control-label" for="customcheckbox1"></label>
+        <div class="card-body p-4">
+          <div class="chats-wrap">
+            <div class="chat-details mb-1 p-3">
+              <h4 class="mb-0">
+                <span class="h5 font-weight-normal">Sales Report</span>
+                <span class="float-right p-1  btn btn-sm text-default">
+                <b>95</b>%</span>
+              </h4>
+              <div class="progress progress-md mt-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary-gradient" style="width: 70%"></div>
               </div>
-
             </div>
-          </div>
-          <div class="media mb-1">
-            <a>
-              <img alt="96x96" class="media-object d-flex mr-3 bg-danger height-50 rounded-circle" src="app-assets/img/portrait/small/avatar-s-11.png">
-            </a>
-            <div class="media-body">
-              <h4 class="font-medium-1 mt-1 mb-0">Jacob Rios</h4>
-              <p class="text-muted font-small-3">HTML Developer</p>
-            </div>
-            <div class="mt-1">
-              <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                <input type="checkbox" class="custom-control-input" id="customcheckbox2">
-                <label class="custom-control-label" for="customcheckbox2"></label>
+            <div class="chat-details mb-1 p-3">
+              <h4 class="mb-0">
+                <span class="h5 font-weight-normal"> List Completion</span>
+                <span class="float-right p-1  btn btn-sm text-default">
+                  <b>84</b>%</span>
+              </h4>
+              <div class="progress progress-md mt-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info-gradient" style="width: 60%"></div>
               </div>
-
             </div>
-          </div>
-          <div class="media mb-1">
-            <a>
-              <img alt="96x96" class="media-object d-flex mr-3 bg-success height-50 rounded-circle" src="app-assets/img/portrait/small/avatar-s-3.png">
-            </a>
-            <div class="media-body">
-              <h4 class="font-medium-1 mt-1 mb-0">Russell Delgado</h4>
-              <p class="text-muted font-small-3">Database Designer</p>
-            </div>
-            <div class="mt-1">
-              <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                <input type="checkbox" class="custom-control-input" id="customcheckbox3">
-                <label class="custom-control-label" for="customcheckbox3"></label>
+            <div class="chat-details mb-1 p-3">
+              <h4 class="mb-0">
+                <span class="h5 font-weight-normal">Purchase Report</span>
+                <span class="float-right p-1  btn btn-sm text-default">
+                  <b>43%</b>
+                </span>
+              </h4>
+              <div class="progress progress-md mt-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning-gradient" style="width: 47%"></div>
               </div>
-
             </div>
-          </div>
-          <div class="media mb-1">
-            <a>
-              <img alt="96x96" class="media-object d-flex mr-3 bg-warning height-50 rounded-circle" src="app-assets/img/portrait/small/avatar-s-6.png">
-            </a>
-            <div class="media-body">
-              <h4 class="font-medium-1 mt-1 mb-0">Sara McDonald</h4>
-              <p class="text-muted font-small-3">Team Leader</p>
-            </div>
-            <div class="mt-1">
-              <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                <input type="checkbox" class="custom-control-input" checked id="customcheckbox4">
-                <label class="custom-control-label" for="customcheckbox4"></label>
+            <div class="chat-details mb-1 p-3">
+              <h4 class="mb-0">
+                <span class="h5 font-weight-normal">Revert Messages</span>
+                <span class="float-right p-1 btn btn-sm text-default">
+                  <b>34%</b>
+                </span>
+              </h4>
+              <div class="progress progress-md mt-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated  bg-success-gradient" style="width: 25%"></div>
               </div>
-
             </div>
           </div>
-          <div class="media mb-1">
-            <a>
-              <img alt="96x96" class="media-object d-flex mr-3 bg-info height-50 rounded-circle" src="app-assets/img/portrait/small/avatar-s-18.png">
-            </a>
-            <div class="media-body">
-              <h4 class="font-medium-1 mt-1 mb-0">Janet Lucas</h4>
-              <p class="text-muted font-small-3">Project Manger</p>
-            </div>
-            <div class="mt-1">
-              <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-                <input type="checkbox" class="custom-control-input" id="customcheckbox5">
-                <label class="custom-control-label" for="customcheckbox5"></label>
-              </div>
+        </div>
+      </div>
+    </div>
 
-            </div>
-          </div>
-          <div class="action-buttons mt-2 text-center">
-            <a class="btn btn-raised gradient-blackberry py-2 px-4 white mr-2">Add New</a>
+    <div class="col-lg-12 col-xl-8 col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Sales Report</h3>
+        </div>
+        <div class="card-body">
+          <div id="morrisBar3" class="chartsh"></div>
+          <div class="col pt-3">
+            <ul class="legend align-items-center ">
+              <li>
+                <span class="legend-dots bg-primary"></span>projects sold
+              </li>
+              <li>
+                <span class="legend-dots bg-secondary"></span>projects in pending
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-xl-4 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">Project Stats</h4>
-      </div>
-      <div class="card-content">
 
-        <p class="font-medium-2 text-muted text-center">Project Tasks</p>
-        <div id="donut-dashboard-chart" class="height-250 donut">
+  <div class="row row-deck">
+    <div class=" col-lg-12 col-xl-4">
+      <div class="card">
+        <div class="card-header border-bottom">
+          <h5 class="card-title">Activities</h5>
         </div>
-
         <div class="card-body">
-          <div class="row mb-3">
-            <div class="col">
-              <span class="mb-1 text-muted d-block">23% - Started</span>
-              <div class="progress" style="height: 5px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 23%;" aria-valuenow="23"
-                  aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="activity mt-3">
+            <img src="assets\images\faces\male\7.jpeg" alt="" class="img-activity cover-image">
+            <div class="time-activity">
+              <div class="item-activity">
+                <p class="mb-0"><b>Dennis Dalpiaz</b> Add a new projects <b> AngularJS Template</b></p>
+                <small class="text-muted ">30 mins ago</small>
+              </div>
+            </div>
+            <img src="assets\images\faces\female\4.jpeg" alt="" class="img-activity">
+            <div class="time-activity">
+              <div class="item-activity">
+                <p class="mb-0"><b>Joey Coronel</b> Add a new projects <b>Free HTML Template</b></p>
+                <small class="text-muted ">1 days ago</small>
+              </div>
+            </div>
+            <img src="assets\images\faces\male\8.jpeg" alt="" class="img-activity">
+            <div class="time-activity">
+              <div class="item-activity">
+                <p class="mb-0"><b>Norbert Bridwell</b> Add a new projects <b>Free PSD Template</b></p>
+                <small class="text-muted ">3 days ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-12 col-xl-4">
+      <div class="card">
+        <div class="card-header border-bottom">
+          <h5 class="card-title">Sales Summary</h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="clearfix border-bottom p-3 ">
+            <div class="col mb-0">
+              <div>
+                <div class="float-left">
+                  <h5><strong>Total Revenue</strong></h5>
+                  <h6 class="mb-0">weekly profit</h6>
+                </div>
               </div>
             </div>
             <div class="col">
-              <span class="mb-1 text-muted d-block">14% - In Progress</span>
-              <div class="progress" style="height: 5px;">
-                <div class="progress-bar bg-amber" role="progressbar" style="width: 14%;" aria-valuenow="14"
-                  aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="float-right">
+                <h4 class="font-weight-semibold label-medium-size mt-4 mb-0 text-primary">$15300</h4>
               </div>
             </div>
           </div>
-          <div class="row mb-2">
+
+          <div class="clearfix border-bottom p-3">
             <div class="col">
-              <span class="mb-1 text-muted d-block">35% - Remaining</span>
-              <div class="progress" style="height: 5px;">
-                <div class="progress-bar bg-deep-purple bg-lighten-1" role="progressbar" style="width: 35%;"
-                  aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+              <div>
+                <div class="float-left">
+                  <h5><strong>Total Tax</strong></h5>
+                  <h6 class="mb-0">weekly profit</h6>
+                </div>
               </div>
             </div>
             <div class="col">
-              <span class="mb-1 text-muted d-block">28% - Done</span>
-              <div class="progress" style="height: 5px;">
-                <div class="progress-bar bg-blue" role="progressbar" style="width: 28%;" aria-valuenow="28"
-                  aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="float-right">
+                <h4 class="font-weight-semibold label-medium-size mt-4 mb-0 text-success">$1625</h4>
               </div>
             </div>
           </div>
+
+          <div class="clearfix border-bottom p-3">
+            <div class="col">
+              <div>
+                <div class="float-left">
+                  <h5><strong>Total Income</strong></h5>
+                  <h6 class="mb-0">weekly profit</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="float-right">
+                <h4 class="font-weight-semibold label-medium-size mt-4 mb-0 text-warning">70%</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="clearfix p-3">
+            <div class="col">
+              <div>
+                <div class="float-left">
+                  <h5><strong>Total Loss</strong></h5>
+                  <h6 class="mb-0">weekly loss</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="float-right">
+                <h4 class="font-weight-semibold label-medium-size mt-4 mb-0 text-secondary">30%</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <a href="#"><i class="fa fa-angle-down"></i> View More</a>
+        </div>
+      </div>
+    </div>
+    <div class=" col-lg-12 col-xl-4">
+      <div class="card">
+        <div class="card-header border-bottom">
+          <h5 class="card-title">Order Statistics</h5>
+        </div>
+        <div class="card-body">
+          <div class="text-center mt-5">
+            <h5><strong></strong></h5>
+          </div>
+          <div id="morrisBar4" class="chartsh"></div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!--Line with Area Chart 1 Starts-->
- 
-<!--Line with Area Chart 1 Ends-->
 
-  
-
-  
-
+  <div class="row row-cards row-deck">
+    <div class="col-md-12 col-lg-12 col-xl-4">
+      <div class="card">
+        <div>
+          <div class="weather-card one">
+            <div class="top">
+              <div class="weather-card-wrapper">
+                <div class="mynav">
+                  <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
+                  <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
+                </div>
+                <h1 class="heading">Clear Night</h1>
+                <h3 class="location">Toronto, Canada</h3>
+                <p class="temp">
+                  <span class="temp-value">30</span>
+                  <span class="deg">0</span>
+                  <a href="javascript:;"><span class="temp-type">C</span></a>
+                </p>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="weather-card-wrapper">
+                <ul class="forecast">
+                  <a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>
+                  <li class="active">
+                    <span class="date">Yesterday</span>
+                    <span class="lnr lnr-sun condition">
+                      <span class="temp">28<span class="deg">0</span><span class="temp-type">C</span></span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="date">Tomorrow</span>
+                    <span class="lnr lnr-cloud condition">
+                      <span class="temp">32<span class="deg">0</span><span class="temp-type">C</span></span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- END : End Main Content-->
-
-        <!-- BEGIN : Footer-->
-        <footer class="footer footer-static footer-light">
-          <p class="clearfix text-muted text-sm-center px-2"><span>Copyright  &copy; 2019 <a href="" id="pixinventLink" target="_blank" class="text-bold-800 primary darken-2">Business Ticket </a>, All rights reserved. </span></p>
-        </footer>
-        <!-- End : Footer-->
-
       </div>
     </div>
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
 
-    
+    <div class="col-lg-12 col-xl-8 col-md-12">
+      <div class="card ">
+        <div class="card-header">
+          <h5 class="card-title">Users Table </h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped card-table table-condensed mt-0 table-nowrap border">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Date registered</th>
+                  <th>Role</th>
+                  <th>Country</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Wilber S. Rusch</td>
+                  <td>2014/03/04</td>
+                  <td>Editor</td>
+                  <td>USA</td>
+                  <td><span class="badge badge-primary">Active</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Joey D. Coronel</td>
+                  <td>2013/09/25</td>
+                  <td>Staff</td>
+                  <td>Canada</td>
+                  <td><span class="badge badge-success">Banned</span></td>
+                </tr>
+                <tr>
+                  <td>Micah H. Boice</td>
+                  <td>2015/02/13</td>
+                  <td>User</td>
+                  <td>South Africa</td>
+                  <td><span class="badge badge-danger">Inactive</span></td>
+                </tr>
+                <tr>
+                  <td>Deshawn B. Nitta</td>
+                  <td>2013/01/02</td>
+                  <td>Editor</td>
+                  <td>Nether Lands</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>Herschel R. Jade</td>
+                  <td>2015/12/23</td>
+                  <td>User</td>
+                  <td>Germany</td>
+                  <td><span class="badge badge-info">Banned</span></td>
+                </tr>
+                <tr>
+                  <td>Sanderson</td>
+                  <td>2016/11/21</td>
+                  <td>Editor</td>
+                  <td>India</td>
+                  <td><span class="badge badge-primary">Active</span></td>
+                </tr>
+                <tr>
+                  <td>Wiley Schreck</td>
+                  <td>2013/08/17</td>
+                  <td>Staff</td>
+                  <td>Russia</td>
+                  <td><span class="badge badge-success">Inactive</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <a href="#"><i class="fa fa-angle-down"></i> View More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
  @endsection

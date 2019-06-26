@@ -87,18 +87,18 @@
             <div class="container">
                 <div class="row">
                 <div class="col-lg-6">
-                    <h2>About The Event</h2>
-                    <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut
-                    accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in
-                    est ut optio sequi unde.</p>
+                    <h2>Event information</h2>
+                    <p>
+                The new event is engraved. There is also a possibility. Depending on the results of your audition, 
+                the results may vary. Ability to achieve as soon as possible.</p>
                 </div>
                 <div class="col-lg-3">
                     <h3>Where</h3>
-                    <p>Downtown Conference Center, New York</p>
+                    <p>Downtown Conference Center, <br> New York</p>
                 </div>
                 <div class="col-lg-3">
                     <h3>When</h3>
-                    <p>Monday to Wednesday<br>10-12 December</p>
+                    <p>All time<br>24/7</p>
                 </div>
                 </div>
             </div>

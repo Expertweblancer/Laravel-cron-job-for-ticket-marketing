@@ -323,13 +323,102 @@
                     </li>
                   </ul>
                 </li>
-                 
+                <li class="">
+                  <a href="#Uielements" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                    <i class="mdi mdi-buffer mr-2"></i>UI Elements
+                  </a>
+                  <ul class="collapse list-unstyled" id="Uielements" data-parent="#accordion">
+                    <li>
+                      <a href="alerts.html">Alerts</a>
+                    </li>
+                    <li>
+                      <a href="buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                      <a href="colors.html">Colors</a>
+                    </li>
+                    <li>
+                      <a href="avatarsquare.html">Avatar-Square</a>
+                    </li>
+                    <li>
+                      <a href="avatar-round.html">Avatar-Rounded</a>
+                    </li>
+                    <li>
+                      <a href="avatar-radius.html">Avatar-Radius</a>
+                    </li>
+                    <li>
+                      <a href="dropdown.html">Drop downs</a>
+                    </li>
+                    <li>
+                      <a href="list.html">List</a>
+                    </li>
+                    <li>
+                      <a href="tags.html">Tags</a>
+                    </li>
+                    <li>
+                      <a href="pagination.html">Pagination</a>
+                    </li>
+                    <li>
+                      <a href="navigation.html">Navigation</a>
+                    </li>
+                    <li>
+                      <a href="typography.html">Typography</a>
+                    </li>
+                    <li>
+                      <a href="breadcrumbs.html">Breadcrumbs</a>
+                    </li>
+                    <li>
+                      <a href="badge.html">Badges</a>
+                    </li>
+                    <li>
+                      <a href="thumbnails.html">Thumbnails</a>
+                    </li>
+                    <li>
+                      <a href="jumbotron.html">Jumbotron</a>
+                    </li>
+                    <li>
+                      <a href="panels.html">Panels</a>
+                    </li>
+                    <li>
+                      <a href="mediaobject.html">Media Object</a>
+                    </li>
+                    <li>
+                      <a href="loaders.html">Loaders</a>
+                    </li>
+                  </ul>
+                </li>
                 <li class="">
                   <a href="#Uidesign" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
                     <i class="fa fa-tachometer mr-2"></i> UI Design
                   </a>
                   <ul class="collapse list-unstyled" id="Uidesign" data-parent="#accordion">
-                     
+                    <li>
+                      <a href="accordion.html">Accordions</a>
+                    </li>
+                    <li>
+                      <a href="tabs.html">Tabs</a>
+                    </li>
+                    <li>
+                      <a href="chart.html">Charts</a>
+                    </li>
+                    <li>
+                      <a href="modal.html">Modal</a>
+                    </li>
+                    <li>
+                      <a href="tooltipandpopover.html">Tooltip and popover</a>
+                    </li>
+                    <li>
+                      <a href="progress.html">Progress</a>
+                    </li>
+                    <li>
+                      <a href="carousel.html">Carousels</a>
+                    </li>
+                    <li>
+                      <a href="headers.html">Headers</a>
+                    </li>
+                    <li>
+                      <a href="footers.html">Footers</a>
+                    </li>
                     <li>
                       <a href="crypto-currencies.html">Crypto-currencies</a>
                     </li>
@@ -397,10 +486,20 @@
                   </ul>
                 </li>
                 <li class="">
-                  <a href="#Forms" class="  wave-effect"  >
-                    <i class="mdi mdi-arrange-send-backward mr-2"></i> Memo
+                  <a href="#Forms" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                    <i class="mdi mdi-arrange-send-backward mr-2"></i> Forms
                   </a>
-                  
+                  <ul class="collapse list-unstyled" id="Forms" data-parent="#accordion">
+                    <li>
+                      <a href="form-elements.html">Form Elements</a>
+                    </li>
+                    <li>
+                      <a href="form-wizard.html">Form-wizard Elements</a>
+                    </li>
+                    <li>
+                      <a href="wysiwyag.html">Text Editor</a>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <a href="{{ route('calendar') }}" class="wave-effect" >
@@ -408,36 +507,235 @@
                   </a>
                    
                 </li>
-                 
-                <li>
-                  <a href="maps.html" class=" wave-effect"><i class="fa fa-map-marker mr-2"></i>Map</a>
+                <li class="">
+                  <a href="#Icons" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa fa-bandcamp mr-2"></i> Icons
+                  </a>
+                  <ul class="collapse list-unstyled" id="Icons" data-parent="#accordion">
+                    <li>
+                      <a href="icons.html">Font Awesome</a>
+                    </li>
+                    <li>
+                      <a href="icons2.html">Material Design Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons3.html">Simple Line Iocns</a>
+                    </li>
+                    <li>
+                      <a href="icons4.html">Feather Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons5.html">Ionic Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons6.html">Flag Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons7.html">pe7 Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons8.html">Themify Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons9.html">Typicons Icons</a>
+                    </li>
+                    <li>
+                      <a href="icons10.html">Weather Icons</a>
+                    </li>
+                  </ul>
                 </li>
-               
-                 
+                <li>
+                  <a href="maps.html" class=" wave-effect"><i class="fa fa-map-marker mr-2"></i> Maps</a>
+                </li>
+                <li class="">
+                  <a href="#Submenu2" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa fa-crosshairs mr-2"></i> User Pages
+                  </a>
+                  <ul class="collapse list-unstyled" id="Submenu2" data-parent="#accordion">
+                    <li>
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                      <a href="register.html">Register</a>
+                    </li>
+                    <li>
+                      <a href="forgot-password.html">Forgot password</a>
+                    </li>
+                    <li>
+                      <a href="lockscreen.html">Lock screen</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="">
+                  <a href="#Submenu3" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa fa-table mr-2"></i> Tables
+                  </a>
+                  <ul class="collapse list-unstyled" id="Submenu3" data-parent="#accordion">
+                    <li>
+                      <a href="tables.html">Default table</a>
+                    </li>
+                    <li>
+                      <a href="datatable.html">Data Table</a>
+                    </li>
+                  </ul>
+                </li>
                 <li class="">
                   <a href="#Submenu6" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa fa-shopping-cart mr-2"></i> Ticket business
+                    <i class="fa fa-shopping-cart mr-2"></i> E-commerce
                   </a>
                   <ul class="collapse list-unstyled" id="Submenu6" data-parent="#accordion">
                     <li>
-                      <a href="{{ route('ticket-business.index') }}">Events</a>
+                      <a href="shop.html">Products</a>
                     </li>
-                    <!-- <li>
+                    <li>
                       <a href="shop-description.html">Product Details</a>
                     </li>
                     <li>
                       <a href="cart.html">Shopping Cart</a>
-                    </li> -->
+                    </li>
                   </ul>
                 </li>
-                 
+                <li class="">
+                  <a href="#Submenu5" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
+                    <i class="fa fa-exclamation-triangle mr-2"></i> Error pages
+                  </a>
+                  <ul class="collapse list-unstyled" id="Submenu5" data-parent="#accordion">
+                    <li>
+                      <a href="400.html">400 Error</a>
+                    </li>
+                    <li>
+                      <a href="401.html">401 Error</a>
+                    </li>
+                    <li>
+                      <a href="403.html">403 Error</a>
+                    </li>
+                    <li>
+                      <a href="404.html">404 Error</a>
+                    </li>
+                    <li>
+                      <a href="500.html">500 Error</a>
+                    </li>
+                    <li>
+                      <a href="503.html">503 Error</a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </nav>
 
 
   
           
-              @yield('content')
+              
+<div class=" content-area">
+    <div class="page-header">
+        <h4 class="page-title">Full Calendar</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Calendar</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Full Calendar</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="border p-0">
+                        <div class="row m-0">
+                            <div id="lnb" class="col-lg-3 col-md-12 col-12">
+                                <div class="lnb-new-schedule">
+                                    <button id="btn-new-schedule" type="button" class="btn btn-secondary btn-block lnb-new-schedule-btn" data-toggle="modal">
+                                    New schedule</button>
+                                </div>
+                                <div id="lnb-calendars" class="lnb-calendars">
+                                    <div>
+                                        <div class="lnb-calendars-item">
+                                            <label>
+                                                <input class="tui-full-calendar-checkbox-square" type="checkbox" value="all" checked="">
+                                                <span></span>
+                                                <strong>View all</strong>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div id="calendarList" class="lnb-calendars-d1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="right" class="col-lg-9 col-md-12 col-12">
+                                <div id="menu">
+                                    <span class="dropdown">
+                                        <button id="dropdownMenu-calendarType" class="btn btn-primary btn-sm btn-pill dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <i id="calendarTypeIcon" class="calendar-icon ic_view_month" style="margin-right: 4px;"></i>
+                                            <span id="calendarTypeName">Dropdown</span>&nbsp;
+                                            <i class="calendar-icon tui-full-calendar-dropdown-arrow"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu-calendarType">
+                                            <li role="presentation">
+                                                <a class="dropdown-menu-title" role="menuitem" data-action="toggle-daily">
+                                                    <i class="calendar-icon ic_view_day"></i>Daily
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a class="dropdown-menu-title" role="menuitem" data-action="toggle-weekly">
+                                                    <i class="calendar-icon ic_view_week"></i>Weekly
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a class="dropdown-menu-title" role="menuitem" data-action="toggle-monthly">
+                                                    <i class="calendar-icon ic_view_month"></i>Month
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a class="dropdown-menu-title" role="menuitem" data-action="toggle-weeks2">
+                                                    <i class="calendar-icon ic_view_week"></i>2 weeks
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a class="dropdown-menu-title" role="menuitem" data-action="toggle-weeks3">
+                                                    <i class="calendar-icon ic_view_week"></i>3 weeks
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="dropdown-divider"></li>
+                                            <li role="presentation">
+                                                <a role="menuitem" data-action="toggle-workweek">
+                                                    <input type="checkbox" class="tui-full-calendar-checkbox-square" value="toggle-workweek" checked="">
+                                                    <span class="checkbox-title"></span>Show weekends
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" data-action="toggle-start-day-1">
+                                                    <input type="checkbox" class="tui-full-calendar-checkbox-square" value="toggle-start-day-1">
+                                                    <span class="checkbox-title"></span>Start Week on Monday
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" data-action="toggle-narrow-weekend">
+                                                    <input type="checkbox" class="tui-full-calendar-checkbox-square" value="toggle-narrow-weekend">
+                                                    <span class="checkbox-title"></span>Narrower than weekdays
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                    <span id="menu-navi">
+                                        <button type="button" class="btn btn-success btn-sm btn-pill move-today" data-action="move-today">Today</button>
+                                        <button type="button" class="btn btn-primary btn-pill btn-sm move-day" data-action="move-prev">
+                                            <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-primary btn-pill btn-sm move-day " data-action="move-next">
+                                            <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
+                                        </button>
+                                    </span>
+                                    <span id="renderRange" class="render-range"></span>
+                                </div>
+                                <div id="calendar" class="table-responsive" style="height: 800px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
            
 				</div>
 			</div>
@@ -487,7 +785,7 @@
 		<!-- Fullside-menu Js-->
 
 		<!-- calendar Js-->
-		<!-- <script src="{{ asset('assets\plugins\calendar2\js\tui-code-snippet.min.js') }}"></script>
+		<script src="{{ asset('assets\plugins\calendar2\js\tui-code-snippet.min.js') }}"></script>
 		<script src="{{ asset('assets\plugins\calendar2\js\tui-time-picker.min.js') }}"></script>
 		<script src="{{ asset('assets\plugins\calendar2\js\tui-date-picker.min.js') }}"></script>
 		<script src="{{ asset('assets\plugins\calendar2\js\moment.min.js') }}"></script>
@@ -496,7 +794,7 @@
 		<script src="{{ asset('assets\plugins\calendar2\js\calendars.js') }}"></script>
 		<script src="{{ asset('assets\plugins\calendar2\js\schedules.js') }}"></script>
 		<script src="{{ asset('assets\plugins\calendar2\js\dooray.js') }}"></script>
-		<script src="{{ asset('assets\plugins\calendar2\js\default.js') }}"></script> -->
+		<script src="{{ asset('assets\plugins\calendar2\js\default.js') }}"></script>
 
 	 
  
@@ -507,3 +805,4 @@
 
   </body>
 </html>
+ 

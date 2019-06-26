@@ -17,6 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
     Route::resource('ticket','TicketsController');
+    Route::resource('upcoming-festivals', 'UpcomeController');
+    Route::resource('ticketweb', 'TicketwebController');
+    Route::resource('etix', 'EtixController');
+    Route::resource('eventbrite', 'EventbriteController');
+    Route::resource('selectaseat', 'SelectaseatController');
+    Route::resource('ticket-business', 'TicketbusinessController');
+
     Route::get('/home', 'HomeController@index')->name('home');
     // Route::get('/ticket', 'TicketController@index')->name('ticket');
     Route::get('/inbox', function(){
@@ -24,11 +31,9 @@ Auth::routes();
     Route::get('/chat', function(){
         return view('chat');
     })->name('chat');
-    Route::get('/taskboard', function(){
-        return view('taskboard');
-    })->name('taskboard');
+ 
     Route::get('/calendar', function(){
-        return view('calendar');
+        return view('pages.calendar');
     })->name('calendar');
 
     Route::get('/maintenance', function(){

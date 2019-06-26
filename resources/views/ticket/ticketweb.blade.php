@@ -3,10 +3,10 @@
 @section('content')
 <div class=" content-area">
     <div class="page-header">
-        <h4 class="page-title">Recorded Tickets</h4>
+        <h4 class="page-title">TicketWeb</h4>
         <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Ticket</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Recorded Tickets</li>
+        <li class="breadcrumb-item"><a href="{{ route('ticket.index')}}">Ticket</a></li>
+        <li class="breadcrumb-item active" aria-current="page">TicketWeb</li>
         </ol>
     </div>
     <div class="row row-cards">
@@ -74,68 +74,51 @@
         </div>
     </div>
   </div>
-    <div class="card p-5">
-          <div class="content-wrapper">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Hi <strong> {{Auth::user()->name}}</strong></h2>
-                    </div>
-                    <div class="col-md-5 text-right">
-                        <a href="{{ route('ticket.create') }}"   class="btn btn-indigo"><i class="fa fa-link   "></i> New Ticket</a>
-                    </div>
-                </div>
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-                @endif
-            <div class="table-responsive">      
-                <table class="table card-table table-vcenter text-nowrap">
-                    <tr>
-                        <th width="10%">Image</th>
-                        <th> Ticket Title</th>
-                        <th>Price</th>
-                        <th>Sales Date</th>
-                        <th>Resales Date</th>
-                        <th></th>
-                        <th></th>
-                        <!-- <th></th>
-                        <th></th> -->
-                    </tr>
-                    @foreach($data as $row)
-                    <tr>
-                        <td><a href="{{ route('ticket.show', $row->id) }}"><img src="{{ asset('images')}}/{{ $row->image }}" class="img-thumbnail" width="75" /></a></td>
-                        <td><a href="{{ route('ticket.show', $row->id) }}">{{ $row->name }}</a></td>
-                        <td><a href="{{ route('ticket.show', $row->id) }}">$ {{ $row->price }}</a></td>
-                        <td><a href="{{ route('ticket.show', $row->id) }}"> {{ $row->sale_date }} </a></td>
-                        <td><a href="{{ route('ticket.show', $row->id) }}"> {{ $row->resale_date }} </a></td>
-                        <td>
-                            <a href="{{ route('ticket.edit', $row->id) }}" class="form-control btn-sm btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-                        </td>
-                        <td>
-                            <form action="{{ route('ticket.destroy', $row->id) }}" method="post">
-                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" class="form-control  btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                            </form>
-                         </td>
-                         
-                    </tr>
-                    @endforeach
-                </table>
-                
-
+   
+  
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">United States Locations</h3>
             </div>
-            <div class="row">
-                <div class="col-md-12" style="padding-left:72%">
-                {!! $data->links() !!}
-
-                </div>
-            </div>    
+            <div class="table-responsive">
+                <table class="table card-table table-vcenter text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Event</th>
+                            <th>Locations</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $i = 1 ?>
+                        @foreach($data as $row)
+                        <tr>
+                                <th scope="row">{{ $i }}</th>
+                                <td>{{ str_replace("'", "", $row->name) }}</td>
+                                <td>{{ str_replace("'", "", $row->address) }}</td>
+                                <td>{{ str_replace("'", "", $row->date) }}</td>
+                            
+                        </tr>
+                        <?php $i+=1 ?>
+                        @endforeach
+                         
+                    </tbody>
+                </table>
+            </div>
+            <!-- table-responsive -->
         </div>
     </div>
 </div>
- 
+<div class="row">
+        <div class="col-md-12" style=" ">
+        {!! $data->links() !!}
 
- 
+        </div>
+    </div>
+
+
+</div>
 @endsection
