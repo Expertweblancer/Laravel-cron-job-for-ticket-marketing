@@ -46,6 +46,7 @@ class RegisteredTickets extends Command
     {
         $count = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->count();
         $tickets = Ticket::get()->where('sale_date' , Carbon::now()->toDateString());
+        // $tickets = Ticket::latest()->paginate(12);
         $price = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->sum('price');
         $data = [
             'count' => $count,
@@ -53,6 +54,6 @@ class RegisteredTickets extends Command
             'price' =>$price
         ];
         // $tickets =  Ticket::orderBy('id', 'desc')->take(5)->get();
-         Mail::to('moronomax@gmail.com')->send(new SendTicket($data));
+         Mail::to('ticketdropper23@gmail.com')->send(new SendTicket($data));
     }
 }

@@ -1,5 +1,7 @@
 <?php
-
+use Illuminate\Http\Request;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +13,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::resource('/', 'WelcomeController');
+Route::post('/contact', function(Request $request){
+    // Mail::send(new ContactMail($request));
+    Mail::to('ticketdropper23@gmail.com')->send(new ContactMail($request));
+
+    echo ('Your message has been sent. Thank you!');
+    // return redirect('/');
+})->name('contact');
+
+Route::post('subscribe', function(Request $request){
+    return redirect('/');
+    
+})->name('subscribe');
 
 Auth::routes();
     Route::resource('ticket','TicketsController');

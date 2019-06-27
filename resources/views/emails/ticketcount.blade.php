@@ -22,6 +22,7 @@
                     <span style="font-family:cursive">Sales Date: {{ $ticket->sale_date }}</span>,
                     <span style="font-family:cursive">Resales Date: {{ $ticket->resale_date }}</span>
                     <p style="font-family:monospace">{{ $ticket->description}}</p>
+                    <img src="http://localhost:10085/images/{{ $ticket->image }}" class="img-thumbnail" width="75" />
                 </div>
             </div>
         @empty
