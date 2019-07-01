@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ticket;
 use App\users;
+use Carbon\Carbon;
+
 
 class TicketsController extends Controller
 {
@@ -16,8 +18,15 @@ class TicketsController extends Controller
     public function index()
     {
         $data = Ticket::latest()->paginate(8);
-        return view('ticket', compact('data'))
-                ->with('i', (request()->input('page', 1) - 1) * 8);
+        $total_count = Ticket::get()->count();
+        $total_cost = Ticket::get()->sum('price');
+        $today_count = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->count();
+        $today_cost = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->sum('price');
+ 
+        
+        return view('ticket',compact('data', 'total_count','total_cost','today_count','today_cost'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);;
+                
     }
 
     /**

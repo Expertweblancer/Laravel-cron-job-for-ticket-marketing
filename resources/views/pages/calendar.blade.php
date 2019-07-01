@@ -237,13 +237,14 @@
           </div>
           <div class="wrapper">
             <!-- Sidebar Holder -->
+            
             <nav id="sidebar" class="nav-sidebar">
               <ul class="list-unstyled components" id="accordion">
                 <div class="user-profile">
                   <div class="dropdown user-pro-body">
                     <div><img src="{{ asset('assets\images\faces\male\photo.png') }}" alt="user-img" class="img-circle"></div>
-                    <div class="mb-2"><a href="#" class="" data-toggle="" aria-haspopup="true" aria-expanded="false"> <span class="font-weight-semibold">Joshua Fischler</span>  </a>
-                    <br><span class="text-gray">Administrator</span>
+                    <div class="mb-2"><a href="#" class="" data-toggle="" aria-haspopup="true" aria-expanded="false"> <span class="font-weight-semibold"> {{Auth::user()->name}}</span>  </a>
+                    <br><span class="text-gray">Owner</span>
                     </div>
                   </div>
                 </div>
@@ -280,128 +281,38 @@
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <a href="#pageSubmenu" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false"><i class="fa fa-area-chart mr-2"></i> Charts</a>
-                  <ul class="collapse list-unstyled" id="pageSubmenu" data-parent="#accordion">
-                    <li>
-                      <a href="chart-chartist.html">Chartjs Charts </a>
-                    </li>
-                    <li>
-                      <a href="chart-dygraph.html">Dygraph Charts</a>
-                    </li>
-                    <li>
-                      <a href="chart-echart.html">Echart Charts</a>
-                    </li>
-                    <li>
-                      <a href="chart-flot.html">Flot Charts</a>
-                    </li>
-                    <li>
-                      <a href="chart-high.html">High Charts</a>
-                    </li>
-                    <li>
-                      <a href="chart-nvd3.html">Nvd3 Charts</a>
-                    </li>
-                    <li>
-                      <a href="chart-morris.html">Morris Charts</a>
-                    </li>
-                    <li class="secondlevel">
-                      <a href="#Submenu4" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">C3 charts</a>
-                      <ul class="collapse list-unstyled" id="Submenu4">
-                        <li>
-                          <a href="charts.html">C3 Bar Charts</a>
-                        </li>
-                        <li>
-                          <a href="chart-line.html">C3 Line Charts</a>
-                        </li>
-                        <li>
-                          <a href="chart-donut.html">C3 Donut Charts</a>
-                        </li>
-                        <li>
-                          <a href="chart-pie.html">C3 Pie charts</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
                  
-                <li class="">
-                  <a href="#Uidesign" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
-                    <i class="fa fa-tachometer mr-2"></i> UI Design
-                  </a>
-                  <ul class="collapse list-unstyled" id="Uidesign" data-parent="#accordion">
-                     
-                    <li>
-                      <a href="crypto-currencies.html">Crypto-currencies</a>
-                    </li>
-                    <li>
-                      <a href="users-list.html">User List</a>
-                    </li>
-                    <li>
-                      <a href="search.html">Search page</a>
-                    </li>
-                  </ul>
-                </li>
+                 
+     
                 <li>
-                  <a href="widgets.html" class=" wave-effect"><i class="fa fa-cubes mr-2"></i> Widgets</a>
+                  <a href="{{ route('statistics.index')}}" class=" wave-effect"><i class="fa fa-cubes mr-2"></i> Statistics</a>
                 </li>
                 <li class="">
                   <a href="#pages" class="accordion-toggle wave-effect" data-toggle="collapse" aria-expanded="false">
                     <i class="mdi mdi-file mr-2"></i> Pages
                   </a>
                   <ul class="collapse list-unstyled" id="pages" data-parent="#accordion">
+                     
+                   
                     <li>
-                      <a href="profile.html">Profile</a>
+                      <a href="{{route('mainsearch')}}">Main Search</a>
                     </li>
                     <li>
-                      <a href="editprofile.html">Edit Profile</a>
+                      <a href="{{ route('email.create')}}">Email</a>
                     </li>
                     <li>
-                      <a href="email.html">Email</a>
+                      <a href="{{ route('email.index')}}">Email Inbox</a>
                     </li>
+                    
+                   
+
+                    
                     <li>
-                      <a href="emailservices.html">Email Inbox</a>
-                    </li>
-                    <li>
-                      <a href="gallery.html" class=" wave-effect"> Gallery</a>
-                    </li>
-                    <li>
-                      <a href="about.html">About Company</a>
-                    </li>
-                    <li>
-                      <a href="company-history.html">Company History</a>
-                    </li>
-                    <li>
-                      <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                      <a href="faq.html">FAQS</a>
-                    </li>
-                    <li>
-                      <a href="terms.html">Terms and Conditions</a>
-                    </li>
-                    <li>
-                      <a href="invoice.html">Invoice</a>
-                    </li>
-                    <li>
-                      <a href="pricing.html">Pricing Tables</a>
-                    </li>
-                    <li>
-                      <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                      <a href="empty.html">Empty Page</a>
-                    </li>
-                    <li>
-                      <a href="construction.html">Under Construction</a>
+                      <a href="{{ route('construction') }}">Under Construction</a>
                     </li>
                   </ul>
                 </li>
-                <li class="">
-                  <a href="#Forms" class="  wave-effect"  >
-                    <i class="mdi mdi-arrange-send-backward mr-2"></i> Memo
-                  </a>
-                  
-                </li>
+               
                 <li>
                   <a href="{{ route('calendar') }}" class="wave-effect" >
                     <i class="fa fa-calendar mr-2"></i> Calendar
@@ -410,7 +321,7 @@
                 </li>
                  
                 <li>
-                  <a href="maps.html" class=" wave-effect"><i class="fa fa-map-marker mr-2"></i>Map</a>
+                  <a href="{{ route('map') }}" class=" wave-effect"><i class="fa fa-map-marker mr-2"></i>Map</a>
                 </li>
                
                  

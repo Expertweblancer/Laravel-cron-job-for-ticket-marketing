@@ -29,6 +29,13 @@ class TicketbusinessController extends Controller
     {
         //
     }
+    public function search(Request $request){
+        $item = $request->item;
+     
+        $data = Eventbrite::where('name', 'LIKE', "%{$item}%")->orWhere('address', 'LIKE', "%{$item}%")->paginate(9);
+        return view('ticket.ticket_business', compact('data'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);
+    }
 
     /**
      * Store a newly created resource in storage.

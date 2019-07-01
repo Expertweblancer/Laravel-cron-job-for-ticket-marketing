@@ -15,8 +15,12 @@ class SelectaseatController extends Controller
     public function index()
     {
         $data = Selectaseat::first()->paginate(10);
-        return view('ticket.selectaseat', compact('data'))
-                ->with('i', (request()->input('page', 1) - 1) * 8);
+
+        $total_count = Selectaseat::get()->count();
+        $last_ticket = Selectaseat::first()->paginate(1);
+        
+        return view('ticket.selectaseat', compact('data', 'total_count','last_ticket'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);
     }
 
     /**

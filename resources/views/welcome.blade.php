@@ -507,7 +507,7 @@
                     <div class="contact-address">
                     <i class="ion-ios-location-outline"></i>
                     <h3>Address</h3>
-                    <address>40 Sutton Pl Apt 9J <br> New York, NY 10022-2306</address>
+                       *** 
                     </div>
                 </div>
 
@@ -515,7 +515,7 @@
                     <div class="contact-phone">
                     <i class="ion-ios-telephone-outline"></i>
                     <h3>Phone Number</h3>
-                    <p><a href="tel:+155895548855">+1 860 9661693</a></p>
+                    <p><a href=" ">***</a></p>
                     </div>
                 </div>
 
@@ -523,7 +523,7 @@
                     <div class="contact-email">
                     <i class="ion-ios-email-outline"></i>
                     <h3>Email</h3>
-                    <p><a href="mailto:info@example.com">tktundrgrnd@gmail.com</a></p>
+                    <p><a href="tktundrgrnd@gmail.com">***</a></p>
                     </div>
                 </div>
 
@@ -572,10 +572,7 @@
 
                 <div class="col-lg-3 col-md-6 footer-info">
                     <img src="img/logo.png" alt="TheEvenet">
-                    <p>Remember the last time you cheered so hard you lost your voice? 
-                    Stood speechless after witnessing greatness? Or saw your favorite band play a triple encore? 
-                    We do. And it's why we do what we do. From technology to marketing, no matter what your role is here at Ticketmaster,
-                     you're helping fans have the time of their lives – while you do too.</p>
+                    <p>Ticket Events</p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
@@ -605,12 +602,9 @@
 
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
-                    <p>
-                    40 Sutton Pl Apt 9J <br>
-                    New York, NY 10022-2306<br>
-                    United States <br>
-                    <strong>Phone:</strong> +1 860 9661 693<br>
-                    <strong>Email:</strong> tktundrgrnd@gmail.com<br>
+                    <strong>Address: </strong> <br>
+                    <strong>Phone:</strong>   <br>
+                    <strong>Email:</strong>  <br>
                     </p>
 
                     <div class="social-links">

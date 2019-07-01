@@ -38,11 +38,25 @@ Auth::routes();
     Route::resource('eventbrite', 'EventbriteController');
     Route::resource('selectaseat', 'SelectaseatController');
     Route::resource('ticket-business', 'TicketbusinessController');
+    Route::resource('user-ticket', 'UserticketController');
+    Route::resource('statistics', 'StatisticsController');
+    Route::resource('email', 'EmailController');
 
+    Route::get('/search', 'SearchController@index')->name('mainsearch');
+    Route::post('/search', 'SearchController@search')->name('search');
+    Route::post('/business_search', 'TicketbusinessController@search')->name('business_search');
+
+    Route::get('/construction', function(){
+        return view('pages.construction');
+    })->name('construction');
+    Route::get('/map', function(){
+        return view('pages.map');
+    })->name('map');
     Route::get('/home', 'HomeController@index')->name('home');
-    // Route::get('/ticket', 'TicketController@index')->name('ticket');
-    Route::get('/inbox', function(){
-        return view('inbox');})->name('inbox');
+    Route::get('/cryptocurrency', function(){
+        return view('pages.cryptocurrency');
+    })->name('cryptocurrency');
+    
     Route::get('/chat', function(){
         return view('chat');
     })->name('chat');
@@ -75,3 +89,9 @@ Auth::routes();
         return view('pages.gallery');
     })->name('gallery');
         
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:clear');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE'; //Return anything
+});

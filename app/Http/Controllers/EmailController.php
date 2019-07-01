@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Etix;
 
-class EtixController extends Controller
+class EmailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,7 @@ class EtixController extends Controller
      */
     public function index()
     {
-        $data = Etix::latest()->paginate(10);
-    
-        $total_count = Etix::get()->count();
-        $last_ticket = Etix::first()->paginate(1);
-        
-        return view('ticket.etix', compact('data', 'total_count','last_ticket'))
-        ->with('i', (request()->input('page', 1) - 1) * 8);
+        return view('pages.mailbox');
     }
 
     /**
@@ -30,7 +23,7 @@ class EtixController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.mail');
     }
 
     /**

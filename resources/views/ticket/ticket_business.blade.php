@@ -135,19 +135,24 @@
                             </div>
                         </div> <!-- card-group-item.// -->
                     </div>
-                    <a href="#" class="btn btn-primary btn-block mb-3 ">Search</a>
+                    <a href="{{ route('ticket-business.index')}}" class="btn btn-primary btn-block mb-3 ">Search</a>
                 </div>
             </div>
         </div>
+   
         <div class="col-lg-9">
-            <div class="input-group mb-5">
-                <input type="text" class="form-control br-tl-7 br-bl-7" placeholder="">
-                <div class="input-group-append ">
-                    <button type="button" class="btn btn-primary br-tr-7 br-br-7">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+        <form action="{{ route('business_search')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="input-group mb-5">
+               
+                    <input type="text" name="item" class="form-control br-tl-7 br-bl-7" placeholder="">
+                    <div class="input-group-append ">
+                        <button type="submit" class="btn btn-primary br-tr-7 br-br-7">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
             <div class="row">
             @foreach($data as $row)
 
@@ -174,7 +179,7 @@
                             <ul class="icons">
                                 <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
 
-                                <li><a href="" data-tip="{{str_replace("'", "", $row->address)}}"><i class="fa fa-search"></i></a></li>
+                                <li><a href="" data-tip="{{str_replace("'", "", $row->address)}}"><i class="fa fa-newspaper-o"></i></a></li>
                                 <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-heart-o"></i></a></li>
                                 <!-- <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li> -->
                             </ul>
@@ -186,19 +191,12 @@
             </div>
             <div class="mb-3 ">
                 <div class="float-right">
-                    <ul class="pagination ">
-                        <li class="page-item page-prev disabled">
-                            <a class="page-link" href="#" tabindex="-1">Prev</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item page-next">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col-md-12" style=" ">
+                    {!! $data->links() !!}
+
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

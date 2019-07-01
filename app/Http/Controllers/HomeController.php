@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Ticket;
 use Carbon\Carbon;
+use App\Selectaseat;
+use App\Ticketweb;
+use App\Upcome;
+use App\Etix;
+use App\Eventbrite;
+ 
 
 class HomeController extends Controller
 {
@@ -26,18 +32,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $total_count = Ticket::get()->count();
+        $data = Selectaseat::first()->paginate(6);
+        $custom_ticket = Ticket::get()->count();
+        $selectaseat = Selectaseat::get()->count();
+        $ticketweb = Ticketweb::get()->count();
+        $etix = Etix::get()->count();
+        $eventbrite = Eventbrite::get()->count();
+        $upcome = Upcome::get()->count();
+
+        $total_count = $custom_ticket + $selectaseat + $ticketweb + $etix + $eventbrite + $upcome;
+
         $total_cost = Ticket::get()->sum('price');
+
         $today_count = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->count();
         $today_cost = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->sum('price');
-         $data = [
-            'total_count' => $total_count,
-            'total_cost' => $total_cost,
-            'today_count' => $today_count,
-            'today_cost' => $today_cost,
-         ];
+ 
         
-        return view('home',compact('total_count','total_cost','today_count','today_cost'));
+        return view('home',compact('data', 'total_count','total_cost', 'custom_ticket', 'upcome', 'today_count','today_cost'));
  
     }
 }

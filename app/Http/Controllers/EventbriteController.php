@@ -15,8 +15,13 @@ class EventbriteController extends Controller
     public function index()
     {
         $data = Eventbrite::first()->paginate(12);
-        return view('ticket.eventbrite', compact('data'))
-                ->with('i', (request()->input('page', 1) - 1) * 8);
+ 
+        
+        $total_count = Eventbrite::get()->count();
+        $last_ticket = Eventbrite::first()->paginate(1);
+     
+        return view('ticket.eventbrite', compact('data', 'total_count','last_ticket'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);
     }
 
     /**

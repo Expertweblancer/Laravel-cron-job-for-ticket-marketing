@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Upcome;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class UpcomeController extends Controller
 {
@@ -14,9 +16,15 @@ class UpcomeController extends Controller
      */
     public function index()
     {
-        $data = Upcome::first()->paginate(20);
-        return view('ticket.upcome', compact('data'))
-                ->with('i', (request()->input('page', 1) - 1) * 8);
+        $data = Upcome::latest()->paginate(16);
+        
+        $total_count = Upcome::get()->count();
+        $last_ticket = Upcome::first()->paginate(1);
+     
+        return view('ticket.upcome', compact('data', 'total_count','last_ticket'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);
+        
+   
     }
 
     /**
