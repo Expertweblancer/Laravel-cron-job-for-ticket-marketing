@@ -15,9 +15,9 @@ class TicketwebController extends Controller
      */
     public function index()
     {
-        $data = Ticketweb::first()->paginate(10);
+        $data = Ticketweb::orderby('sold_out', 'desc')->paginate(10);
         $total_count = Ticketweb::get()->count();
-        $last_ticket = Ticketweb::first()->paginate(1);
+        $last_ticket = Ticketweb::orderby('sold_out', 'desc')->paginate(1);
      
         return view('ticket.ticketweb', compact('data', 'total_count','last_ticket'))
         ->with('i', (request()->input('page', 1) - 1) * 8);

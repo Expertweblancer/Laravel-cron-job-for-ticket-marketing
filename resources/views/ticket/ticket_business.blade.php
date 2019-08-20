@@ -20,15 +20,16 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label class="form-label mt-0">Locations</label>
+                                <label class="form-label mt-0">Ticket Info</label>
                                 <select name="beast" id="select-beast" class="form-control custom-select">
                                     <option value="0">--Select--</option>
-                                     <option value="2">US</option>
-                                    <option value="3">UK</option>
+                                     <option value="2">Sold Out</option>
+                                    <option value="3">Sales Ended</option>
+                                    <option value="3">Resale Ticket</option>
                                      
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="form-label">Human</label>
                                 <select name="beast" id="select-beast1" class="form-control custom-select">
                                     <option value="0">--Select--</option>
@@ -72,7 +73,7 @@
                                     <option value="4">Music</option>
                                     <option value="5">Exercise & fitness</option>
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="card">
@@ -161,7 +162,7 @@
                         <div class="product-grid6  card-body">
                             <div class="product-image6">
                                 <a href="#">
-                                    <img class="img-fluid" src="{{ str_replace("'", "", $row->img) }}">
+                                    <img class="img-fluid" src="{{ str_replace("'", "", $row->small_img) }}">
                                 </a>
                             </div>
                             <div class="product-content text-center">

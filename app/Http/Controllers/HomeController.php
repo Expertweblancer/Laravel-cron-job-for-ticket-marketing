@@ -11,6 +11,7 @@ use App\Ticketweb;
 use App\Upcome;
 use App\Etix;
 use App\Eventbrite;
+use App\Flyticket;
  
 
 class HomeController extends Controller
@@ -39,16 +40,23 @@ class HomeController extends Controller
         $etix = Etix::get()->count();
         $eventbrite = Eventbrite::get()->count();
         $upcome = Upcome::get()->count();
+        $flyticket = Flyticket::where('sold_out', 'NOT LIKE', '%ree%')->count();
 
-        $total_count = $custom_ticket + $selectaseat + $ticketweb + $etix + $eventbrite + $upcome;
+        $sold_out =  Eventbrite::where('sold_out', 'LIKE', '%s%' )->limit(10)->get();
 
-        $total_cost = Ticket::get()->sum('price');
+        $total_count = $custom_ticket + $flyticket + $selectaseat + $ticketweb + $etix + $eventbrite + $upcome;
+
+        // $total_cost = Ticket::get()->sum('price');
+        $total = Eventbrite::get('price');
+        $total_cost = Eventbrite::where('sold_out', 'LIKE', '%s%' )->get()->count();
+         
+        
 
         $today_count = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->count();
         $today_cost = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->sum('price');
  
         
-        return view('home',compact('data', 'total_count','total_cost', 'custom_ticket', 'upcome', 'today_count','today_cost'));
+        return view('home',compact('data', 'total_count', 'sold_out', 'total_cost', 'custom_ticket', 'upcome', 'today_count','today_cost'));
  
     }
 }

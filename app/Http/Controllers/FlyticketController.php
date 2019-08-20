@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Flyticket;
 use Illuminate\Http\Request;
-use App\Eventbrite;
 
-
-class TicketbusinessController extends Controller
+class FlyticketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,14 @@ class TicketbusinessController extends Controller
      */
     public function index()
     {
-        $data = Eventbrite::latest()->paginate(9);
-        return view('ticket.ticket_business', compact('data'))
-                ->with('i', (request()->input('page', 1) - 1) * 8);
+        $data = Flyticket::first()->where('sold_out', 'NOT LIKE', '%ree%')->paginate(12);
+ 
+        
+        $total_count = Flyticket::where('sold_out', 'NOT LIKE', '%ree%')->count();
+        $last_ticket =  Flyticket::where('sold_out', 'LIKE', '%sold%' )->limit(1)->get();
+     
+        return view('ticket.flyticket', compact('data', 'total_count','last_ticket'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);
     }
 
     /**
@@ -28,13 +31,6 @@ class TicketbusinessController extends Controller
     public function create()
     {
         //
-    }
-    public function search(Request $request){
-        $item = $request->item;
-     
-        $data = Eventbrite::where('name', 'LIKE', "%{$item}%")->orWhere('address', 'LIKE', "%{$item}%")->paginate(9);
-        return view('ticket.ticket_business', compact('data'))
-        ->with('i', (request()->input('page', 1) - 1) * 8);
     }
 
     /**
@@ -82,6 +78,16 @@ class TicketbusinessController extends Controller
         //
     }
 
+    public function search(Request $request){
+        $item = $request->item;
+        $total_count = Flyticket::where('name', 'LIKE', "%{$item}%")->orwhere('sold_out', 'LIKE', "%{$item}%" )->orWhere('address', 'LIKE', "%{$item}%")->count();
+        $last_ticket = Flyticket::where('name', 'LIKE', "%{$item}%")->orwhere('sold_out', 'LIKE', "%{$item}%" )->orWhere('address', 'LIKE', "%{$item}%")->paginate(1);
+        
+        
+        $data = Flyticket::where('name', 'LIKE', "%{$item}%")->orwhere('sold_out', 'LIKE', "%{$item}%" )->orWhere('address', 'LIKE', "%{$item}%")->limit(100) ->get();
+        return view('ticket.flyticketsearch', compact('data', 'total_count','last_ticket'));
+         
+    }
     /**
      * Remove the specified resource from storage.
      *

@@ -77,15 +77,16 @@
     <div class="card p-5">
           <div class="content-wrapper">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>Hi <strong> {{Auth::user()->name}}</strong></h2>
+                    <div class="col-md-8">
+                        <h2>Hi <strong> {{Auth::user()->name}}</strong> <span style="font-size:12px">You can memo your custom ticket here. Please record the ticket info you favor.</span></h2>
+                       
                     </div>
-                    <div class="col-md-5 text-right">
+                    <div class="col-md-3 text-right">
                         <a href="{{ route('ticket.create') }}"   class="btn btn-indigo"><i class="fa fa-link   "></i> New Ticket</a>
                     </div>
                 </div>
                 @if ($message = Session::get('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success" role="alert">
                     <p>{{ $message }}</p>
                 </div>
                 @endif
@@ -116,7 +117,7 @@
                             <form action="{{ route('ticket.destroy', $row->id) }}" method="post">
                                  @csrf
                                 @method('DELETE')
-                                <button type="submit" class="form-control  btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                                <button type="submit" onclick="return confirm('Are you sure?')" id="click2" class="form-control  btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</button>
                             </form>
                          </td>
                          

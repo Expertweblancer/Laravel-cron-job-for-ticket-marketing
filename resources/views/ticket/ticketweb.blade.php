@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+td, th{
+    font-size:18px;
+}
+</style>
 <div class=" content-area">
     <div class="page-header">
         <h4 class="page-title">TicketWeb</h4>
@@ -29,14 +34,14 @@
         <div class="col-sm-12 col-lg-6 col-xl-8 col-md-6">
         <div class="card card-img-holder text-default">
             <div class="row">
-            <div class="col-2">
-                <div class="card-img-absolute circle-icon bg-secondary align-items-center text-center shadow-secondary"><img src="assets\images\circle.svg" class="card-img-absolute"><i class="fa fa-wpforms fs-30  text-white mt-4"></i></div>
+            <div class="col-3">
+                 <img  src="{{ str_replace("'", "", $last_ticket[0]->img) }} " class="card-img-absolute">  
             </div>
-            <div class="col-10">
+            <div class="col-9">
                 
                 <div class="card-body p-4">
                 <h3 class="mb-3 text-primary"> {{ str_replace("'", "", $last_ticket[0]->name) }}  ( <small class="text-info">{{ str_replace("'", "", $last_ticket[0]->date) }}</small> )</h3>
-                <h5 class="font-weight-normal mb-0"> Locations {{ str_replace("'", "", $last_ticket[0]->address) }}  <button class="btn btn-sm btn-outline-danger">Ongoing Ticket</button></h5>
+                <h5 class="font-weight-normal mb-0"> Locations {{ str_replace("'", "", $last_ticket[0]->address) }}  <button class="btn btn-sm btn-outline-danger">{{ str_replace("'", "", $last_ticket[0]->sold_out) }} </button></h5>
                 </div>
             </div>
             </div>
@@ -56,19 +61,41 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th width="150px">Image</th>
                             <th>Event</th>
-                            <th>Locations</th>
-                            <th>Date</th>
+                             <th>Status</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $i = 1 ?>
                         @foreach($data as $row)
-                        <tr>
-                                <th scope="row">{{ $i }}</th>
-                                <td>{{ str_replace("'", "", $row->name) }}</td>
-                                <td>{{ str_replace("'", "", $row->address) }}</td>
-                                <td>{{ str_replace("'", "", $row->date) }}</td>
+                    <tr>
+                        <th scope="row">{{ $i }}</th>
+                        <td><img src="{{ str_replace("'", "", $row->img) }}" alt=""></td>
+                        <td><?php 
+                        $str = str_replace("'", "", $row->name);
+                            if (strlen($str) > 15)
+                            $str = substr($str, 0, 15) . '...';
+                        
+                        ?>
+                      <br>
+                        {{ $str }}
+                        {{ str_replace("'", "", $row->address) }}
+                        </td>
+
+                        
+                         <td>
+                         <?php 
+                        $str = str_replace("'", "", $row->sold_out);
+                            if (strlen($str) > 15)
+                            $str = "No Ticket...";
+                        
+                        ?>
+                         {{ $str }} <br>
+                        {{ str_replace("'", "", $row->date) }}
+                        </td>
+                        <td><a href="{{ str_replace("'","", $row->link)}}" class="btn btn-lg btn-info">More</a></td>
                             
                         </tr>
                         <?php $i+=1 ?>

@@ -90,7 +90,7 @@
             <div class="card card-img-holder text-default">
                 <div class="row">
                     <div class="col-4">
-                        <div class="card-img-absolute  circle-icon bg-info align-items-center text-center shadow-info"><img src="{{ str_replace("'", "", $eventbrite_data->img) }}" class="card-img-absolute"><i class="lnr lnr-bubble fs-30 text-white mt-4"></i></div>
+                        <div class="card-img-absolute  circle-icon bg-info align-items-center text-center shadow-info"><img src="{{ str_replace("'", "", $eventbrite_data->small_img) }}" class="card-img-absolute"><i class="lnr lnr-bubble fs-30 text-white mt-4"></i></div>
                     </div>
                     <div class="col-8">
                         <div class="card-body p-4">

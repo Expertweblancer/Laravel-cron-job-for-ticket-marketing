@@ -35,12 +35,16 @@ Auth::routes();
     Route::resource('upcoming-festivals', 'UpcomeController');
     Route::resource('ticketweb', 'TicketwebController');
     Route::resource('etix', 'EtixController');
+    Route::resource('flyticket', 'FlyticketController');
     Route::resource('eventbrite', 'EventbriteController');
     Route::resource('selectaseat', 'SelectaseatController');
     Route::resource('ticket-business', 'TicketbusinessController');
     Route::resource('user-ticket', 'UserticketController');
     Route::resource('statistics', 'StatisticsController');
     Route::resource('email', 'EmailController');
+
+    Route::post('event_search', 'EventbriteController@search')->name('event_search');
+    Route::post('ticket_search', 'FlyticketController@search')->name('ticket_search');
 
     Route::get('/search', 'SearchController@index')->name('mainsearch');
     Route::post('/search', 'SearchController@search')->name('search');

@@ -262,9 +262,9 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="hotel">
                         <div class="hotel-img">
-                            <img src="{{ str_replace("'", "", $row->img) }}" alt="Hotel 1" class="img-fluid">
+                            <img src="{{ str_replace("'", "", $row->small_img) }}" alt="Hotel 1" class="img-fluid">
                         </div>
-                        <h3><a href="#">{{ str_replace("'", "", $row->name) }}</a></h3>
+                        <h3><a href="{{ str_replace("'", "", $row->link) }}">{{ str_replace("'", "", $row->name) }}</a></h3>
                         <!-- <div class="stars">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -306,7 +306,8 @@
                 <a href="img/gallery/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/7.jpg" alt=""></a>
                 <a href="img/gallery/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="img/gallery/8.jpg" alt=""></a> -->
                 @foreach($gallery as $row)
-                <a href="img/gallery/{{$i}}.jpg" class="venobox" data-gall="gallery-carousel"><img src="{{ str_replace("'", "", $row->img) }}" alt=""></a>
+                <!-- <a href="img/gallery/{{$i}}.jpg" class="venobox" data-gall="gallery-carousel"><img src="{{ str_replace("'", "", $row->big_img) }}" alt=""></a> -->
+                <a href="{{route('login')}}" class="venobox" data-gall="gallery-carousel"><img src="{{ str_replace("'", "", $row->big_img) }}" alt=""></a>
                 <?php $i++; ?>
                 @endforeach
 

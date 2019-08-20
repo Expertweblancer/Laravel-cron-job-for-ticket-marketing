@@ -55,7 +55,7 @@
             <div class="card-body">
                 <h4 class="mb-3">{{ str_replace("'", "", $row->name) }}</h4>
                 <p> {{ str_replace("'", "", $row->address) }}</p>
-                <a href="#" class="btn btn-primary">{{ str_replace("'", "", $row->date) }}</a>
+                <a target="_blank" rel="noopener noreferrer" href="{{ str_replace("'", "", $row->link) }}" class="btn btn-primary">{{ str_replace("'", "", $row->date) }}</a>
             </div>
         </div>
     </div>

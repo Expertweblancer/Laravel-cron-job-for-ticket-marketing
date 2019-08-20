@@ -103,14 +103,7 @@
         </div>
         @endforeach
     </div>
-            
-  
-    <div class="row">
-        <div class="col-md-12" style=" ">
-        {!! $data->links() !!}
-
-        </div>
-    </div>
+   
    
 </div>
 @endsection

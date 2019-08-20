@@ -69,12 +69,16 @@
                 </div>
                 <div class="d-flex order-lg-2 ml-auto header-right-icons header-search-icon">
                   <div class="p-2">
-                    <form class="input-icon ">
+                    <form class="input-icon" action="{{ route('event_search')}}" method="post" enctype="multipart/form-data">
+                      @csrf
                       <div class="input-icon-addon">
                         <i class="fe fe-search"></i>
                       </div>
-                      <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+                      <input type="search" name="item" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
                     </form>
+
+
+        
                   </div>
 
                   <div class="dropdown d-none d-md-flex">
@@ -83,7 +87,7 @@
                     </a>
                   </div>
 
-                  <div class="dropdown d-none d-md-flex">
+                  <!-- <div class="dropdown d-none d-md-flex">
                     <a class="nav-link icon" data-toggle="dropdown">
                       <i class="fa fa-bell-o"></i>
                       <span class="nav-unread bg-warning"></span>
@@ -119,8 +123,8 @@
                       <div class="dropdown-divider"></div>
                       <a href="#" class="dropdown-item text-center">View all Notification</a>
                     </div>
-                  </div>
-                  <div class="dropdown d-none d-md-flex">
+                  </div> -->
+                  <!-- <div class="dropdown d-none d-md-flex">
                     <a class="nav-link icon text-center" data-toggle="dropdown">
                       <i class="icon icon-speech"></i>
                       <span class=" nav-unread badge badge-info badge-pill">2</span>
@@ -152,7 +156,7 @@
                       <div class="dropdown-divider"></div>
                       <a href="#" class="dropdown-item text-center">See all Messages</a>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="dropdown d-none d-md-flex ">
                     <a class="nav-link icon " data-toggle="dropdown">
                       <i class="fe fe-grid floating"></i>
@@ -177,7 +181,7 @@
                             <span class="block">map</span>
                           </a>
                         </li>
-                        <li>
+                        <!-- <li>
                           <a href="cart.html" class="drop-icon-item">
                             <i class="fe fe-shopping-cart text-dark"></i>
                             <span class="block">Cart</span>
@@ -194,10 +198,10 @@
                             <i class="fe fe-phone-outgoing text-dark"></i>
                             <span class="block">contact</span>
                           </a>
-                        </li>
+                        </li> -->
                       </ul>
-                      <div class="dropdown-divider"></div>
-                      <a href="#" class="dropdown-item text-center">View all</a>
+                      <!-- <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item text-center">View all</a> -->
                     </div>
                   </div>
                   <div class="dropdown text-center selector">
@@ -210,7 +214,7 @@
                         <span class="text-center user-semi-title text-dark">Owner</span>
                         <div class="dropdown-divider"></div>
                       </div>
-                      <a class="dropdown-item" href="#">
+                      <!-- <a class="dropdown-item" href="#">
                         <i class="dropdown-icon mdi mdi-account-outline"></i> Profile
                       </a>
                       <a class="dropdown-item" href="#">
@@ -222,7 +226,7 @@
                       </a>
                       <a class="dropdown-item" href="#">
                         <i class="dropdown-icon mdi mdi-comment-check-outline"></i> Message
-                      </a>
+                      </a> -->
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">
                         <i class="dropdown-icon mdi mdi-compass-outline"></i> Need help?
@@ -271,6 +275,9 @@
                       <a href="{{ route('ticketweb.index') }}">Ticket Web</a>
                     </li>
                     <li>
+                      <a href="{{ route('flyticket.index') }}">Ticketfly</a>
+                    </li>
+                    <li>
                       <a href="{{ route('selectaseat.index')}}">Select a Seat</a>
                     </li>
                     <li>
@@ -297,9 +304,9 @@
                   <ul class="collapse list-unstyled" id="pages" data-parent="#accordion">
                      
                    
-                    <li>
+                    <!-- <li>
                       <a href="{{route('mainsearch')}}">Main Search</a>
-                    </li>
+                    </li> -->
                     <li>
                       <a href="{{ route('email.create')}}">Email</a>
                     </li>

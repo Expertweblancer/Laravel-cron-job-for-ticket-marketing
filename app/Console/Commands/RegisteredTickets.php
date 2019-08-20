@@ -8,6 +8,7 @@ use App\Ticket;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendTicket;
 use Carbon\Carbon;
+use App\Eventbrite;
 // use App\Mail;
 
 class RegisteredTickets extends Command
@@ -44,14 +45,16 @@ class RegisteredTickets extends Command
      */
     public function handle()
     {
-        $count = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->count();
-        $tickets = Ticket::get()->where('sale_date' , Carbon::now()->toDateString());
+        $count = Eventbrite::where('sold_out', 'LIKE', '%s%' )->get()->count();
+        $tickets = Eventbrite::where('sold_out', 'LIKE', '%s%' )->limit(10)->get();
+    //     BookingDates::where('email', Input::get('email'))
+    // ->orWhere('name', 'like', '%' . Input::get('name') . '%')->get();
         // $tickets = Ticket::latest()->paginate(12);
-        $price = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->sum('price');
+        // $price = Ticket::get()->where('sale_date' , Carbon::now()->toDateString())->sum('price');
         $data = [
             'count' => $count,
-            'tickets' => $tickets,
-            'price' =>$price
+            'tickets' => $tickets
+            
         ];
         // $tickets =  Ticket::orderBy('id', 'desc')->take(5)->get();
          Mail::to('ticketdropper23@gmail.com')->send(new SendTicket($data));

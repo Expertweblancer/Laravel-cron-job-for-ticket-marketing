@@ -51,8 +51,8 @@
           </div>
           <div class="col-8">
             <div class="card-body p-4">
-              <h1 class="mb-3">$ {{ $total_cost }}</h1>
-              <h5 class="font-weight-normal mb-0">Custom Ticket Cost</h5>
+              <h1 class="mb-3"> {{ $total_cost }}</h1>
+              <h5 class="font-weight-normal mb-0">Sold Out Tickets</h5>
             </div>
           </div>
         </div>
@@ -88,31 +88,31 @@
               <h4 class="mb-0">
                 <span class="h5 font-weight-normal">Ongoing Tickets</span>
                 <span class="float-right p-1  btn btn-sm text-default">
-                <b></b>{{ $upcome }}</span>
+                <b></b>{{$total_count}}</span>
               </h4>
               <div class="progress progress-md mt-3">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary-gradient" style="width: 70%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary-gradient" style="width: 90%"></div>
               </div>
             </div>
             <div class="chat-details mb-1 p-3">
               <h4 class="mb-0">
                 <span class="h5 font-weight-normal"> Custom Ticket</span>
                 <span class="float-right p-1  btn btn-sm text-default">
-                  <b>{{$custom_ticket}}</b></span>
+                  <b></b>{{ $upcome }}</span>
               </h4>
               <div class="progress progress-md mt-3">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info-gradient" style="width: 60%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info-gradient" style="width: 10%"></div>
               </div>
             </div>
             <div class="chat-details mb-1 p-3">
               <h4 class="mb-0">
-                <span class="h5 font-weight-normal">Custom Price</span>
+                <span class="h5 font-weight-normal">Sold Out</span>
                 <span class="float-right p-1  btn btn-sm text-default">
-                  <b>$ {{$total_cost}}</b>
+                  <b> {{$total_cost}}</b>
                 </span>
               </h4>
               <div class="progress progress-md mt-3">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning-gradient" style="width: 47%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning-gradient" style="width: 27%"></div>
               </div>
             </div>
             <div class="chat-details mb-1 p-3">
@@ -156,67 +156,12 @@
  
 
   <div class="row row-cards row-deck">
-    <div class="col-md-12 col-lg-12 col-xl-4">
-      <div class="card clearfix">
-        <div class="card-header">
-            <h2 class="card-title">Profile</h2>
-        </div>
-          <div class="card-body p-0">
-          <div class="card-body bg-primary text-white">
-            <img src="{{ asset('assets\images\faces\male\photo.png') }}"   alt="" class="profile-img img-responsive center-block">
-            <a href="#" class="profile-image">
-              <span class="fa fa-pencil" aria-hidden="true"></span>
-            </a>
-            <div class="profile-label mt-3">
-              <span>{{Auth::user()->name}}</span>
-            </div>
+    
 
-            <div class="profile-stars">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              
-              <span>Website Owner</span>
-            </div>
-
-            <div class="profile-since">
-               {{date("F j, Y, g:i a")}}
-            </div>
-          </div>
-                              <div class="border-bottom align-items-center">
-            <div class="card-body">
-              <div class="profile-details">
-                <div class="list-group list-group-transparent mb-0 mail-inbox">
-                  <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                    <span class="icon mr-3"><i class="fa fa-phone-square"></i></span>Phone: <span>+1 860 966 1693</span>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                    <span class="icon mr-3"><i class="fa fa-outdent"></i></span>Address: <span>40 Sutton Pl Apt 9J, NY 10022-2306</span>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                    <span class="icon mr-3"><i class="fa fa-envelope-square"></i></span>Email: <span> tktundrgrnd@gmail.com</span>z
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-                              <div class="p-3">
-            <div class="profile-message-btn center-block text-center">
-              <a href="{{ route('email.index') }}" class="btn btn-secondary btn-block">
-                <i class="fa fa-envelope"></i> Send message
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-12 col-xl-8 col-md-12">
+    <div class="col-lg-12 col-xl-12 col-md-12">
       <div class="card ">
         <div class="card-header">
-          <h5 class="card-title">Select a Seat </h5>
+          <h5 class="card-title">Sold Out Ticket </h5>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -232,7 +177,7 @@
               </thead>
               <tbody>
               <?php $i = 1 ?>
-                @foreach($data as $row)
+                @foreach($sold_out as $row)
                 <tr>
                         <th scope="row">{{ $i }}</th>
                         <td>{{ str_replace("'", "", $row->name) }}</td>
@@ -246,7 +191,7 @@
           </div>
         </div>
         <div class="card-footer text-center">
-          <a href="{{route('selectaseat.index')}}"><i class="fa fa-angle-down"></i> View More</a>
+          <a href="{{route('eventbrite.index')}}"><i class="fa fa-angle-down"></i> View More</a>
         </div>
       </div>
     </div>

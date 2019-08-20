@@ -18,10 +18,21 @@ class EventbriteController extends Controller
  
         
         $total_count = Eventbrite::get()->count();
-        $last_ticket = Eventbrite::first()->paginate(1);
+        $last_ticket =  Eventbrite::where('sold_out', 'LIKE', '%s%' )->limit(1)->get();
      
         return view('ticket.eventbrite', compact('data', 'total_count','last_ticket'))
         ->with('i', (request()->input('page', 1) - 1) * 8);
+    }
+
+    public function search(Request $request){
+        $item = $request->item;
+        $total_count = Eventbrite::get()->count();
+        $last_ticket = Eventbrite::where('name', 'LIKE', "%{$item}%")->orwhere('sold_out', 'LIKE', "%{$item}%" )->orWhere('address', 'LIKE', "%{$item}%")->paginate(1);
+        
+        
+        $data = Eventbrite::where('name', 'LIKE', "%{$item}%")->orwhere('sold_out', 'LIKE', "%{$item}%" )->orWhere('address', 'LIKE', "%{$item}%")->limit(100) ->get();
+        return view('ticket.eventsearch', compact('data', 'total_count','last_ticket'));
+         
     }
 
     /**
@@ -53,7 +64,8 @@ class EventbriteController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Eventbrite::findOrFail($id);
+        return view('ticket.vieweventbrite', compact('data'));
     }
 
     /**

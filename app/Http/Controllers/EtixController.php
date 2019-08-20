@@ -14,10 +14,10 @@ class EtixController extends Controller
      */
     public function index()
     {
-        $data = Etix::latest()->paginate(10);
+        $data = Etix::orderby('sold_out','desc')->paginate(10);
     
         $total_count = Etix::get()->count();
-        $last_ticket = Etix::first()->paginate(1);
+        $last_ticket = Etix::orderby('sold_out','desc')->paginate(1);
         
         return view('ticket.etix', compact('data', 'total_count','last_ticket'))
         ->with('i', (request()->input('page', 1) - 1) * 8);

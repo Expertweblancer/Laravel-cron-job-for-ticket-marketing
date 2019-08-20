@@ -19,8 +19,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $data = Upcome::first()->paginate(9);
-        $features = Eventbrite::first()->paginate(3);
-        $gallery = Etix::latest()->paginate(8);
+        $features = Eventbrite::limit(3)->get();
+        $gallery = Eventbrite::limit(8)->get();
  
         return view('welcome', compact('data','features','gallery'))
                 ->with('i', (request()->input('page', 1) - 1) * 8);
