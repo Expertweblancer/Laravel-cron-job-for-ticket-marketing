@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendTicket extends Mailable
+class ResaleTicket extends Mailable
 {
     use Queueable, SerializesModels;
     // public $count;
@@ -39,6 +39,6 @@ class SendTicket extends Mailable
     {
          
         // return $this->view('view.name');
-        return $this->view('emails.soldout');
+        return $this->view('emails.resale');
     }
 }

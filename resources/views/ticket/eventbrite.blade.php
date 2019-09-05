@@ -30,7 +30,7 @@
         <div class="card card-img-holder text-default">
           <div class="row">
             <div class="col-md-2 col-sm-12">
-              <div class="card-img-absolute circle-icon bg-secondary align-items-center text-center shadow-secondary"><img src="{{ str_replace("'", "", $last_ticket[0]->small_img) }}" class="card-img-absolute"> </div>
+              <div class="card-img-absolute circle-icon bg-secondary align-items-center text-center shadow-secondary"><img src="{{ str_replace("'", "", $last_ticket[0]->img) }}" class="card-img-absolute"> </div>
             </div>
             <div class="col-md-8 col-sm-12">
               
@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                       <a href="{{ route('eventbrite.show', $row->id)}}">
-                        <img src="{{ str_replace("'", "", $row->small_img) }}" alt="">
+                        <img src="{{ str_replace("'", "", $row->img) }}" alt="">
                       </a>
                     </div>
                     <div class="col-lg-7">

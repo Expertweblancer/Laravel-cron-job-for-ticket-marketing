@@ -8,17 +8,17 @@ use App\Ticket;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendTicket;
 use Carbon\Carbon;
-use App\Eventbrite;
+use App\Etix;
 // use App\Mail;
 
-class RegisteredTickets extends Command
+class RegisteredEtix extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'registered:eventbrite';
+    protected $signature = 'registered:etix';
 
     /**
      * The console command description.
@@ -45,8 +45,8 @@ class RegisteredTickets extends Command
      */
     public function handle()
     {
-        $count = Eventbrite::where('sold_out', 'LIKE', '%s%' )->get()->count();
-        $tickets = Eventbrite::where('sold_out', 'LIKE', '%s%' )->limit(10)->get();
+        $count = Etix::where('sold_out', 'LIKE', '%s%' )->get()->count();
+        $tickets = Etix::where('sold_out', 'LIKE', '%s%' )->limit(10)->get();
     //     BookingDates::where('email', Input::get('email'))
     // ->orWhere('name', 'like', '%' . Input::get('name') . '%')->get();
         // $tickets = Ticket::latest()->paginate(12);

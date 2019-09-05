@@ -6,26 +6,27 @@ use Illuminate\Console\Command;
 use Illuminate\Mail\Mailer;
 use App\Ticket;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SendTicket;
+// use App\Mail\SendTicket;
+use App\Mail\ResaleTicket;
 use Carbon\Carbon;
-use App\Eventbrite;
+use App\Etix;
 // use App\Mail;
 
-class RegisteredTickets extends Command
+class ResaledEtix extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'registered:eventbrite';
+    protected $signature = 'resaled:etix';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Send an email of registered tickets';
+    protected $description = 'Send an email of Resaled tickets';
      
 
     /**
@@ -45,8 +46,8 @@ class RegisteredTickets extends Command
      */
     public function handle()
     {
-        $count = Eventbrite::where('sold_out', 'LIKE', '%s%' )->get()->count();
-        $tickets = Eventbrite::where('sold_out', 'LIKE', '%s%' )->limit(10)->get();
+        $count = Etix::where('sold_out', 'LIKE', '%re%' )->get()->count();
+        $tickets = Etix::where('sold_out', 'LIKE', '%re%' )->limit(3)->get();
     //     BookingDates::where('email', Input::get('email'))
     // ->orWhere('name', 'like', '%' . Input::get('name') . '%')->get();
         // $tickets = Ticket::latest()->paginate(12);
@@ -57,6 +58,6 @@ class RegisteredTickets extends Command
             
         ];
         // $tickets =  Ticket::orderBy('id', 'desc')->take(5)->get();
-         Mail::to('ticketdropper23@gmail.com')->send(new SendTicket($data));
+         Mail::to('ticketdropper23@gmail.com')->send(new ResaleTicket($data));
     }
 }

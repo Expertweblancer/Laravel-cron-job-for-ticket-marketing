@@ -15,6 +15,10 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         'App\Console\Commands\RegisteredUsers',
         'App\Console\Commands\RegisteredTickets',
+        'App\Console\Commands\RegisteredWebticket',
+        'App\Console\Commands\RegisteredFlyticket',
+        'App\Console\Commands\RegisteredEtix',
+        'App\console\Commands\ResaledEtix',
     ];
 
     /**
@@ -26,9 +30,18 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('registered:users')->everyMinute();
-        $schedule->command('registered:tickets')->everyMinute();
+        $schedule->command('registered:eventbrite')->everyMinute();
+        $schedule->command('registered:ticketweb')->everyMinute();
+        $schedule->command('registered:flyticket')->everyMinute();
+        $schedule->command('registered:etix')->everyMinute();
+        $schedule->command('resaled:etix')->everyMinute();
         // $schedule->command('inspire')
         //          ->hourly();
+    }
+
+    protected function scheduleTimezone()
+    {
+        return 'America/New_York';
     }
 
     /**
